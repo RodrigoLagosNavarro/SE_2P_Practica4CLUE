@@ -1,0 +1,394 @@
+body {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#game {
+    width: 1280px;
+    height: 720px;
+    position: relative;
+    overflow: hidden;
+    image-rendering: pixelated;
+    font-family: monospace;
+    color: white;
+}
+
+/* ========================= */
+/* ===== MENÚ ============== */
+/* ========================= */
+
+#menu-background {
+    width: 100%;
+    height: 100%;
+    background-image: url("imagenes/MANSION.png");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+}
+
+#menu {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-btn {
+    width: 200px;
+    padding: 15px;
+    font-size: 18px;
+    background: rgba(0,0,0,0.7);
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+.menu-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* ========================= */
+/* ===== CINEMÁTICA ======== */
+/* ========================= */
+
+#cinematica {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+}
+
+#cinematica-background {
+    width: 100%;
+    height: 100%;
+    background-image: url("imagenes/CONVERSACION.png");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+}
+
+#mission-box {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    padding: 15px;
+    border: 2px solid white;
+}
+
+#dialogue-box {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(0,0,0,0.85);
+    border: 2px solid white;
+    padding: 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+#dialogue-text {
+    font-size: 22px;
+}
+
+#continue-text {
+    text-align: right;
+    margin-top: 15px;
+    opacity: 0.7;
+}
+
+/* ========================= */
+/* ===== JUEGO ============= */
+/* ========================= */
+
+#game-screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+}
+
+#game-background {
+    width: 100%;
+    height: 100%;
+    background-image: url("imagenes/PASILLO.png");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+}
+
+/* ========================= */
+/* ===== PERSONAJES ======== */
+/* ========================= */
+
+#room-character {
+    position: absolute;
+    display: none;
+    cursor: pointer;
+    image-rendering: pixelated;
+}
+
+/* ========================= */
+/* ===== PERSONAJE VIVO ==== */
+/* ========================= */
+
+.alive-character {
+    width: 700px;
+    bottom: -400px;
+    right: 400px;
+}
+
+/* ========================= */
+/* ===== PERSONAJE MUERTO == */
+/* ========================= */
+
+.dead-character {
+    width: 440px;
+    bottom: -180px;
+    right: 400px;
+}
+
+
+/* ========================= */
+/* ===== OBJETO / ARMA ===== */
+/* ========================= */
+
+#weapon-object {
+    position: absolute;
+    width: 100px;
+    bottom: 90px;
+    right: 320px;
+    display: none;
+    image-rendering: pixelated;
+    pointer-events: none;
+}
+
+/* ========================= */
+/* ===== OBJETIVO ========== */
+/* ========================= */
+
+#objective-box {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    padding: 15px;
+    border: 2px solid white;
+}
+
+/* ========================= */
+/* ===== TEXTO ============= */
+/* ========================= */
+
+#clue-box {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 500px;
+    min-height: 100px;
+    background: rgba(0,0,0,0.8);
+    border: 2px solid white;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 18px;
+    white-space: pre-line;
+}
+
+/* ========================= */
+/* ===== BOTÓN IR ========= */
+/* ========================= */
+
+#irBtn {
+    position: absolute;
+    width: 80px;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#accuse-open-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 120px;
+    width: 140px;
+    height: 60px;
+    background: rgba(0,0,0,0.85);
+    border: 2px solid white;
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+}
+
+#accuse-open-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* ========================= */
+/* ===== OVERLAY =========== */
+/* ========================= */
+
+#overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay-box {
+    background: rgba(0,0,0,0.9);
+    border: 2px solid white;
+    padding: 30px;
+    text-align: center;
+}
+
+.overlay-btn {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    background: black;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+/* ========================= */
+/* ===== ACUSACIÓN ========= */
+/* ========================= */
+
+#accusation-panel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#accusation-box {
+    background: black;
+    border: 2px solid white;
+    padding: 30px;
+    text-align: center;
+}
+
+#accusation-box select,
+#accusation-box button {
+    display: block;
+    width: 250px;
+    margin: 15px auto;
+    padding: 10px;
+    background: black;
+    border: 1px solid white;
+    color: white;
+    font-family: monospace;
+}
+
+/* ========================= */
+/* ===== MUERTE ============ */
+/* ========================= */
+
+#death-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#death-text {
+    color: red;
+    font-size: 50px;
+}
+
+/* ========================= */
+/* ===== TUTORIAL ========== */
+/* ========================= */
+
+#tutorial-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+#tutorial-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.92);
+}
+
+#tutorial-box {
+    position: relative;
+    width: 800px;
+    max-height: 600px;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.95);
+    border: 3px solid white;
+    padding: 30px;
+    box-sizing: border-box;
+    z-index: 5;
+    color: orange;
+}
+
+#tutorial-box h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 40px;
+    color: orange;
+}
+
+#tutorial-text {
+    white-space: pre-line;
+    font-size: 20px;
+    line-height: 1.8;
+    color: orange;
+
+}
+
+#close-tutorial-btn {
+    width: 250px;
+    margin: 30px auto 0 auto;
+    display: block;
+    padding: 15px;
+    background: black;
+    border: 2px solid white;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+#close-tutorial-btn:hover {
+    background: white;
+    color: black;
+}

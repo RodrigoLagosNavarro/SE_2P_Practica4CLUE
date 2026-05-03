@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>La Mansión del Eco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game">
+
+    <!-- MENÚ -->
+
+    <div id="menu-background"></div>
+
+    <div id="menu">
+
+        <button class="menu-btn" id="playBtn">
+            PLAY
+        </button>
+
+	<button class="menu-btn" id="tutorialBtn">
+            TUTORIAL
+	</button>
+
+        <button class="menu-btn">
+            AUDIO
+        </button>
+
+    </div>
+
+    <!-- CINEMÁTICA -->
+
+    <div id="cinematica">
+
+        <div id="cinematica-background"></div>
+
+        <div id="mission-box">
+            MISIÓN: Explora la mansión.
+        </div>
+
+        <div id="dialogue-box">
+
+            <div id="dialogue-text">
+                JOHN: No me gusta este lugar...
+            </div>
+
+            <div id="continue-text">
+                CLICK PARA CONTINUAR
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JUEGO -->
+
+    <div id="game-screen">
+
+        <!-- Fondo -->
+
+        <div id="game-background"></div>
+
+        <!-- Personaje -->
+
+        <img id="room-character">
+
+        <!-- Arma -->
+
+        <img id="weapon-object">
+
+        <!-- Objetivo -->
+
+        <div id="objective-box">
+            OBJETIVO: Investiga las habitaciones.
+        </div>
+
+        <!-- Texto -->
+
+        <div id="clue-box">
+            Explora las habitaciones para encontrar pistas.
+        </div>
+
+        <!-- Botón IR -->
+
+        <img src="imagenes/IR.png" id="irBtn">
+
+	<button id="accuse-open-btn">
+    		ACUSAR
+	</button>
+
+        <!-- Overlay -->
+
+        <div id="overlay">
+
+            <div id="overlay-box">
+
+                <h2>¿A dónde ir?</h2>
+
+                <button class="overlay-btn"
+                onclick="cambiarEscena('BIBLIOTECA.png')">
+                    Biblioteca
+                </button>
+
+                <button class="overlay-btn"
+                onclick="cambiarEscena('SOTANO.png')">
+                    Sótano
+                </button>
+
+                <button class="overlay-btn"
+                onclick="cambiarEscena('HABITACION.png')">
+                    Habitación
+                </button>
+
+                <button class="overlay-btn"
+                onclick="cambiarEscena('COMEDOR.png')">
+                    Comedor
+                </button>
+
+                <button class="overlay-btn"
+                onclick="cambiarEscena('CAPILLA.png')">
+                    Capilla
+                </button>
+
+                <button class="overlay-btn"
+                onclick="cerrarOverlay()">
+                    Cerrar
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PANEL -->
+
+        <div id="accusation-panel">
+
+            <div id="accusation-box">
+
+                <h2>REALIZAR ACUSACIÓN</h2>
+
+                <select id="suspect-select">
+
+                    <option>JOHN</option>
+                    <option>GINA</option>
+                    <option>RICHARD</option>
+                    <option>JOSEPH</option>
+                    <option>ANA</option>
+
+                </select>
+
+                <select id="weapon-select">
+
+                    <option>DAGA</option>
+                    <option>CRUCIFIJO</option>
+                    <option>HACHA</option>
+                    <option>CUERDA</option>
+                    <option>VELA</option>
+
+                </select>
+
+                <select id="room-select">
+
+                    <option>Biblioteca</option>
+                    <option>Sótano</option>
+                    <option>Habitación</option>
+                    <option>Comedor</option>
+                    <option>Capilla</option>
+
+                </select>
+
+                <button id="accuse-btn">
+                    ACUSAR
+                </button>
+
+                <button id="close-accusation">
+                    CERRAR
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- MUERTE -->
+
+        <div id="death-screen">
+
+            <div id="death-text">
+                ALGUIEN HA MUERTO...
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- TUTORIAL -->
+
+<div id="tutorial-screen">
+
+    <div id="tutorial-background"></div>
+
+    <div id="tutorial-box">
+
+        <h1>TUTORIAL</h1>
+
+        <div id="tutorial-text">
+
+            Bienvenido a La Mansión del Eco.
+
+            Tu objetivo es descubrir quién es el asesino.
+
+            Explora habitaciones.
+            Habla con personajes.
+            Encuentra pistas.
+            Descubre cadáveres.
+
+            Después de encontrar un cuerpo,
+            podrás regresar a la Capilla
+            para realizar una acusación.
+
+            Si te equivocas...
+            otro personaje morirá.
+
+            Investiga antes de acusar.
+
+        </div>
+
+        <button id="close-tutorial-btn">
+            VOLVER
+        </button>
+
+    </div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
