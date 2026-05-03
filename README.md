@@ -1,11 +1,5 @@
-```md id="k7s2px"
 # 🏚️ LA MANSIÓN DEL ECO 🕯️
 
-<p align="center">
-  <img width="700" src="imagenes/MANSION.png">
-</p>
-
-<p align="center">
 Un juego de horror, misterio e investigación estilo pixelart.<br>
 Descubre al asesino antes de que la mansión reclame otra víctima.
 </p>
@@ -136,10 +130,3 @@ La mansión siempre exige otra víctima...
 ✅ Sistema de acusaciones  
 ✅ Tutorial integrado  
 
----
-
-# 🩸 Hecho por
-
-## Rodrigo Lagos Navarro
-## 23110148 — 7E
-```
